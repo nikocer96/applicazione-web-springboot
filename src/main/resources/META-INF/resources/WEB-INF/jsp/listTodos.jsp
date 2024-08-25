@@ -1,13 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
-<head>
-<link
-	href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
-	rel="stylesheet">
-<title>List Todos Page</title>
-<!-- <script src="https://cdn.tailwindcss.com"></script> -->
-</head>
+
 <body>
+	<%@ include file="common/navigation.jspf" %>
+	<%@ include file="common/header.jspf" %>
+	
 	<div class="container">
 		<h1 class="text-purple-500 text-3xl">Welcome ${name}</h1>
 	<div>
@@ -30,7 +25,9 @@
 					<td>${todo.description}</td>
 					<td>${todo.targetDate}</td>
 					<td>${todo.done}</td>
-					<td><a href="todo-delete?id=${todo.id}" class="btn btn-warning">DELETE ${todo.id}</a></td>
+					<td><a href="todo-delete?id=${todo.id}" class="btn btn-warning">DELETE ${todo.id}</a>
+						<a href="todo-update?id=${todo.id}" class="btn btn-success">UPDATE ${todo.id}</a>
+					</td>
 
 				</tr>
 
@@ -41,7 +38,4 @@
 	</table>
 	<a class="btn btn-success" href="add-todo">Add Todo</a>
 	</div>
-	<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-	<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-</body>
-</html>
+	<%@ include file="common/footer.jspf" %>
